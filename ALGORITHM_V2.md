@@ -1,29 +1,49 @@
-# Nexus Sight — Algorithm V2
+# Nexus Sight — niezależny Algorithm V2
 
-Algorithm V2 działa jako warstwa zgodna wstecznie nad dotychczasową analizą.
-Nie zmienia endpointu ani pól używanych przez frontend.
+Algorithm V2 nie jest już nakładką na wynik V1. Endpoint pobiera surowe dane meczowe z Riot Match API i przekazuje je bezpośrednio do osobnego silnika `analysis-engine-v2.ts`.
 
-## Najważniejsze zmiany
+Stary plik `routes/analysis.ts` pozostaje w repo jako wersja referencyjna, ale aktywny router korzysta z `routes/analysis-v2.ts`.
 
-- osobne wagi dla Top, Jungle, Mid, ADC i Supporta,
-- stabilizacja wyniku przy małej liczbie meczów,
-- Bayesian shrinkage win rate do 50%,
-- większa waga najnowszych meczów,
-- ograniczenie wpływu pojedynczego ekstremalnego meczu,
-- stabilizacja ocen championów przy 1–5 grach,
-- wynik pewności zależny od liczby meczów i stabilności roli,
-- zachowanie starego wyniku w `legacyOverallScore` do porównań.
+## Co V2 liczy od zera
 
-## Pola dodane do odpowiedzi
+- ocenę każdego meczu,
+- ogólny wynik gracza,
+- komponenty profilu: walka, ekonomia, gra zespołowa, wizja, przeżywalność, obiektywy i presja linii,
+- mocne oraz słabe strony,
+- krytyczne błędy i powtarzalne wzorce,
+- archetyp stylu gry,
+- plan poprawy i wskazówki coachingowe,
+- ocenę championów,
+- aktualną formę, konsekwencję oraz poziom pewności analizy,
+- warunki zwycięstwa, krzywą mocy, analizę śmierci, tiltu i konwersji obiektów.
 
-- `algorithmVersion: "2.0"`
-- `legacyOverallScore`
-- `legacyOverallRating`
-- `scoreConfidence`
-- `scoreBreakdown`
+## Osobne profile ról
 
-## Integracja
+Każda rola ma własne cele i wagi:
 
-W `routes/index.ts` import `./analysis` został zastąpiony przez `./analysis-v2`.
-Wrapper uruchamia dotychczasową analizę i bezpiecznie przelicza wynik przed wysłaniem odpowiedzi.
-Jeżeli przeliczenie V2 zakończy się błędem, API zwraca niezmienioną odpowiedź V1.
+- **Top:** ekonomia linii, presja boczna, przeżywalność i konwersja wież,
+- **Jungle:** KP, tempo mapy, wizja oraz cele neutralne,
+- **Mid:** obrażenia, ekonomia, presja środka i rotacje,
+- **ADC:** ekonomia, udział w obrażeniach i pozycjonowanie,
+- **Support:** wizja, KP, przygotowanie obiektów i ograniczanie śmierci.
+
+Support nie jest oceniany jak carry pod względem CS i obrażeń, a ADC nie otrzymuje takich samych wag jak jungler.
+
+## Stabilizacja statystyczna
+
+- wynik jest stabilizowany przy małej próbce,
+- najnowsze mecze mają większą wagę,
+- win rate jest zmniejszany w kierunku 50% przy małej liczbie gier,
+- oceny championów są zmniejszane w kierunku wyniku całego profilu,
+- pewność zależy od liczby meczów i stabilności głównej roli.
+
+## Odpowiedź API
+
+Podstawowy kształt odpowiedzi pozostaje zgodny z frontendem. Dodatkowo zwracane są:
+
+- `algorithmVersion: "2.1-independent"`,
+- `scoreConfidence`,
+- `scoreBreakdown`,
+- `roleInsights`.
+
+Cache V2 ma osobny klucz zawierający wersję silnika, dzięki czemu stare wyniki nie mieszają się z nową analizą.
