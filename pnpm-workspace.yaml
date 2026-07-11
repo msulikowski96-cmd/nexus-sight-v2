@@ -62,11 +62,17 @@ catalog:
 
 autoInstallPeers: false
 
-onlyBuiltDependencies:
-  - '@swc/core'
-  - esbuild
-  - msw
-  - unrs-resolver
+# pnpm 11 replacement for onlyBuiltDependencies/ignoredBuiltDependencies.
+# Required build scripts are explicitly allowed; Electron is not needed by
+# the production web/API build and stays disabled to avoid downloading it.
+strictDepBuilds: true
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+  msw: true
+  unrs-resolver: true
+  protobufjs: true
+  electron: false
 
 overrides:
   # linux-x64 only — exclude other platforms
@@ -130,7 +136,6 @@ overrides:
   "rollup>@rollup/rollup-linux-ppc64-gnu": "-"
   "rollup>@rollup/rollup-linux-ppc64-musl": "-"
   "rollup>@rollup/rollup-linux-riscv64-gnu": "-"
-  "rollup>@rollup/rollup-linux-riscv64-musl": "-"
   "rollup>@rollup/rollup-linux-s390x-gnu": "-"
   "rollup>@rollup/rollup-linux-x64-musl": "-"
   "rollup>@rollup/rollup-openbsd-x64": "-"
