@@ -1,0 +1,31 @@
+name: Import Nexus Sight V2
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Algorithm V2 source
+        run: |
+          git clone --branch algorithm-v2-zip --single-branch https://github.com/msulikowski96-cmd/lol.git source
+
+      - name: Create clean V2 repository history
+        run: |
+          cd source
+          rm -rf .git
+          git init
+          git checkout -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Initial Nexus Sight V2 with Algorithm V2"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push --force origin main
