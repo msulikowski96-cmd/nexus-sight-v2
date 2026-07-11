@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Nexus Sight — Statystyki graczy League of Legends</title>
+    <meta name="description" content="Nexus Sight to darmowe narzędzie do analizy statystyk graczy League of Legends. Sprawdź rangi, historię meczy, mistrzostwo bohaterów, analizę AI i live game dowolnego gracza LoL." />
+    <meta name="keywords" content="League of Legends, LoL, statystyki, analiza, rangi, historia meczy, live game, mistrzostwo, Riot Games, Nexus Sight, op.gg, porofessor, u.gg" />
+    <meta name="author" content="Nexus Sight" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nexus-sight.onrender.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nexus Sight — Statystyki graczy League of Legends" />
+    <meta property="og:description" content="Sprawdź statystyki każdego gracza LoL — głęboka analiza AI, historia meczy, live game, szacowana ranga i mistrzostwo bohaterów." />
+    <meta property="og:image" content="https://nexus-sight.onrender.com/opengraph.jpg" />
+    <meta property="og:url" content="https://nexus-sight.onrender.com/" />
+    <meta property="og:site_name" content="Nexus Sight" />
+    <meta property="og:locale" content="pl_PL" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nexus Sight — Statystyki graczy League of Legends" />
+    <meta name="twitter:description" content="Darmowe narzędzie do analizy statystyk graczy LoL. Rangi, historia meczy, analiza AI, live game." />
+    <meta name="twitter:image" content="https://nexus-sight.onrender.com/opengraph.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0284c7" />
+    <meta name="google-adsense-account" content="ca-pub-7717242133259434" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7717242133259434"
+     crossorigin="anonymous"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TNV3R5MH');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Nexus Sight",
+      "url": "https://nexus-sight.onrender.com/",
+      "description": "Darmowe, polskojęzyczne narzędzie do analizy statystyk graczy League of Legends. Rangi, historia meczy, mistrzostwo bohaterów, analiza AI, live game i porady coachingowe.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "pl",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Nexus Sight"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "League of Legends",
+        "gamePlatform": "PC",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Riot Games"
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czym jest Nexus Sight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nexus Sight to darmowe, polskojęzyczne narzędzie do analizy statystyk graczy League of Legends. Korzysta z oficjalnego API Riot Games i sztucznej inteligencji do generowania głębokich raportów analitycznych."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jakie funkcje oferuje Nexus Sight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nexus Sight oferuje: wyszukiwanie graczy po Riot ID, profil z rangą i historią meczy, głęboką analizę AI z oceną stylu gry, śledzenie gry na żywo (live game), mistrzostwo bohaterów, szczegółowe statystyki per champion, porady coachingowe i polecane championy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy Nexus Sight jest darmowy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, Nexus Sight jest całkowicie darmowy. Nie wymaga logowania ani rejestracji. Wystarczy wpisać Riot ID gracza (nazwa#tag) i wybrać serwer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jakie regiony obsługuje Nexus Sight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nexus Sight obsługuje wszystkie serwery League of Legends: EUW, EUNE, NA, KR, BR, LAN, LAS, OCE, TR, RU, JP oraz serwery azjatyckie (PH, SG, TW, TH, VN)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym jest analiza AI w Nexus Sight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Analiza AI to zaawansowany raport generowany przez sztuczną inteligencję. Ocenia styl gry, mocne i słabe strony, umiejętności makro i mikro, fazę laningową, teamfighty, kontrolę wizji, aspekt mentalny, a także podaje wskazówki coachingowe i polecane championy."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNV3R5MH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Facebook SDK -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1431707311574915',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v20.0'
+        });
+        FB.AppEvents.logPageView();
+      };
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- End Facebook SDK -->
+
+    <div id="root">
+      <div style="max-width:640px;margin:0 auto;padding:40px 20px;font-family:'Inter',sans-serif;color:#1e293b">
+        <header style="text-align:center;margin-bottom:40px">
+          <h1 style="font-size:32px;font-weight:800;margin:0 0 8px;letter-spacing:0.04em">NEXUS SIGHT</h1>
+          <p style="font-size:11px;letter-spacing:0.2em;color:#64748b;text-transform:uppercase;margin:0 0 16px">League of Legends &middot; Analiza Statystyk</p>
+          <p style="font-size:15px;color:#475569;line-height:1.7;margin:0">
+            Sprawdź statystyki każdego gracza League of Legends — rangi, historia meczy, mistrzostwo bohaterów,
+            analiza AI i śledzenie gry na żywo. Wszystko po polsku, za darmo, bez rejestracji.
+          </p>
+        </header>
+
+        <main>
+          <section style="margin-bottom:36px">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 16px">Funkcje Nexus Sight</h2>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li style="padding:12px 0;border-bottom:1px solid #e2e8f0">
+                <strong>Głęboka analiza statystyk</strong> — 12 wskaźników wydajności: KDA, Kill Participation, Vision Score, CS/min,
+                Damage Share, Early Game Score, Objective Control, Tilt Index, OP Score i więcej.
+              </li>
+              <li style="padding:12px 0;border-bottom:1px solid #e2e8f0">
+                <strong>Live Game — gra na żywo</strong> — sprawdź rangi, runy, czarownie i bany wszystkich 10 graczy
+                w aktywnym meczu w czasie rzeczywistym.
+              </li>
+              <li style="padding:12px 0;border-bottom:1px solid #e2e8f0">
+                <strong>Historia meczy</strong> — ostatnie 20 meczów z pełnymi szczegółami: KDA, buildy przedmiotów,
+                runy, obrażenia, porównanie z oponentem z lane.
+              </li>
+              <li style="padding:12px 0;border-bottom:1px solid #e2e8f0">
+                <strong>Analiza AI</strong> — raport generowany przez sztuczną inteligencję: ocena stylu gry,
+                mocne i słabe strony, wskazówki coachingowe, polecane championy i prognoza rankingowa.
+              </li>
+              <li style="padding:12px 0;border-bottom:1px solid #e2e8f0">
+                <strong>Mistrzostwo bohaterów</strong> — top championy z poziomami mistrzostwa i punktami.
+              </li>
+              <li style="padding:12px 0">
+                <strong>Statystyki per champion</strong> — win rate, KDA, średnie CS i obrażenia dla konkretnego bohatera
+                w meczach rankingowych.
+              </li>
+            </ul>
+          </section>
+
+          <section style="margin-bottom:36px">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 16px">Obsługiwane regiony</h2>
+            <p style="font-size:14px;color:#475569;line-height:1.7">
+              Nexus Sight obsługuje wszystkie serwery League of Legends:
+              <strong>EUW</strong> (Europa Zachodnia),
+              <strong>EUNE</strong> (Europa Północno-Wschodnia),
+              <strong>NA</strong> (Ameryka Północna),
+              <strong>KR</strong> (Korea),
+              <strong>BR</strong> (Brazylia),
+              <strong>LAN</strong> (Ameryka Łacińska Północ),
+              <strong>LAS</strong> (Ameryka Łacińska Południe),
+              <strong>OCE</strong> (Oceania),
+              <strong>TR</strong> (Turcja),
+              <strong>RU</strong> (Rosja),
+              <strong>JP</strong> (Japonia),
+              <strong>PH</strong>, <strong>SG</strong>, <strong>TW</strong>, <strong>TH</strong>, <strong>VN</strong> (serwery azjatyckie).
+            </p>
+          </section>
+
+          <section style="margin-bottom:36px">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 16px">Jak korzystać z Nexus Sight?</h2>
+            <ol style="padding-left:20px;margin:0;color:#475569;font-size:14px;line-height:1.8">
+              <li>Wejdź na stronę <a href="https://nexus-sight.onrender.com" style="color:#0284c7">nexus-sight.onrender.com</a></li>
+              <li>Wybierz serwer regionalny (np. EUW1)</li>
+              <li>Wpisz Riot ID gracza — nazwa i tag (np. Faker#T1)</li>
+              <li>Kliknij „Szukaj" — zobaczysz pełny profil z rangą, meczami i analizą</li>
+              <li>Opcjonalnie: przejdź do zakładki „AI Analiza" po szczegółowy raport AI</li>
+            </ol>
+          </section>
+
+          <section style="margin-bottom:36px">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 16px">Najczęściej zadawane pytania</h2>
+
+            <div style="margin-bottom:16px">
+              <h3 style="font-size:15px;font-weight:600;margin:0 0 6px">Czym jest Nexus Sight?</h3>
+              <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">
+                Nexus Sight to darmowe, polskojęzyczne narzędzie do analizy statystyk graczy League of Legends.
+                Korzysta z oficjalnego API Riot Games i sztucznej inteligencji do generowania
+                głębokich raportów analitycznych.
+              </p>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <h3 style="font-size:15px;font-weight:600;margin:0 0 6px">Czy muszę się rejestrować?</h3>
+              <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">
+                Nie, Nexus Sight nie wymaga logowania ani rejestracji. Wystarczy wpisać Riot ID dowolnego gracza
+                i wybrać serwer. Dane pobierane są bezpośrednio z oficjalnego API Riot Games.
+              </p>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <h3 style="font-size:15px;font-weight:600;margin:0 0 6px">Jak działa analiza AI?</h3>
+              <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">
+                Analiza AI to zaawansowany raport generowany przez sztuczną inteligencję na podstawie
+                ostatnich meczy gracza. Ocenia styl gry, mocne i słabe strony, umiejętności makro i mikro,
+                fazę laningową, teamfighty, kontrolę wizji, aspekt mentalny, a także podaje wskazówki
+                coachingowe i polecane championy dopasowane do stylu gry.
+              </p>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <h3 style="font-size:15px;font-weight:600;margin:0 0 6px">Co to jest Live Game?</h3>
+              <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">
+                Funkcja Live Game pozwala sprawdzić aktywny mecz w czasie rzeczywistym — rangi SoloQ i Flex
+                wszystkich 10 graczy, ich runy, czarownie przywołacza i zakazanych championów. Timer pokazuje
+                aktualny czas trwania meczu.
+              </p>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <h3 style="font-size:15px;font-weight:600;margin:0 0 6px">Jakie wskaźniki oblicza Nexus Sight?</h3>
+              <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">
+                Nexus Sight oblicza ponad 12 wskaźników wydajności: OP Score (ogólna ocena), KDA Index,
+                Kill Participation, Vision Score, CS/min, Damage Share, Early Game Score, Objective Control,
+                Tilt Index (wykrywanie tiltu), archetyp stylu gry (np. Agresywny Carry, Tank Initiator),
+                krzywą mocy i szacowaną realną rangę opartą na faktycznym poziomie gry.
+              </p>
+            </div>
+          </section>
+
+          <section style="margin-bottom:36px">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 12px">Czym jest Nexus Sight?</h2>
+            <p style="font-size:14px;color:#475569;line-height:1.7">
+              Nexus Sight to darmowe, polskojęzyczne narzędzie do analizy statystyk graczy League of Legends.
+              Wystarczy wpisać Riot ID dowolnego gracza (nazwa#tag), aby zobaczyć szczegółowe informacje o jego
+              rozgrywce — rangi, historię meczy, mistrzostwo bohaterów i głęboką analizę AI.
+            </p>
+            <p style="font-size:14px;color:#475569;line-height:1.7">
+              Nasze unikalne algorytmy analizy wykraczają poza standardowe statystyki. Obliczamy archetyp stylu gry
+              (np. „Agresywny Carry", „Strażnik Linii"), wskaźnik tiltu, warunki zwycięstwa, krzywą mocy
+              (w której fazie gry jesteś najsilniejszy) oraz szacowaną realną rangę opartą na faktycznym poziomie gry.
+            </p>
+            <p style="font-size:14px;color:#475569;line-height:1.7">
+              Aplikacja obsługuje wszystkie regiony League of Legends: EUW, EUNE, NA, KR, BR, LAN, LAS, OCE, TR, RU, JP
+              oraz serwery azjatyckie. Dane pobieramy bezpośrednio z oficjalnego API Riot Games — bez konieczności logowania.
+            </p>
+          </section>
+        </main>
+
+        <footer style="border-top:1px solid #e2e8f0;padding-top:20px;text-align:center">
+          <nav style="margin-bottom:12px">
+            <a href="/about" style="color:#0284c7;font-size:13px;margin:0 12px;text-decoration:none">O nas</a>
+            <a href="/poradnik" style="color:#0284c7;font-size:13px;margin:0 12px;text-decoration:none">Poradnik</a>
+            <a href="/privacy" style="color:#0284c7;font-size:13px;margin:0 12px;text-decoration:none">Polityka Prywatności</a>
+            <a href="/terms" style="color:#0284c7;font-size:13px;margin:0 12px;text-decoration:none">Regulamin</a>
+          </nav>
+          <p style="font-size:11px;color:#94a3b8;line-height:1.6;margin:0">
+            Nexus Sight nie jest zatwierdzony przez Riot Games i nie odzwierciedla poglądów ani opinii Riot Games
+            ani żadnej osoby oficjalnie zaangażowanej w tworzenie lub zarządzanie właściwościami Riot Games.
+            League of Legends i Riot Games są znakami towarowymi lub zarejestrowanymi znakami towarowymi Riot Games, Inc.
+          </p>
+          <p style="font-size:10px;color:#cbd5e1;margin-top:8px">&copy; 2026 Nexus Sight &middot; Powered by Riot API</p>
+        </footer>
+      </div>
+    </div>
+    <noscript>
+      <div style="max-width:640px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#333">
+        <h1 style="font-size:28px;font-weight:700;margin:0 0 12px">Nexus Sight — Statystyki League of Legends</h1>
+        <p style="font-size:14px;line-height:1.7;color:#555">
+          Nexus Sight to darmowe narzędzie do analizy statystyk graczy League of Legends.
+          Niestety, aplikacja wymaga JavaScript do działania. Włącz obsługę JavaScript w przeglądarce,
+          aby korzystać z wyszukiwarki graczy, analizy AI, historii meczy i śledzenia gier na żywo.
+        </p>
+        <p style="font-size:13px;color:#666;margin-top:16px">
+          Odwiedź nas ponownie z włączoną obsługą JavaScript:
+          <a href="https://nexus-sight.onrender.com" style="color:#0284c7">nexus-sight.onrender.com</a>
+        </p>
+        <ul style="font-size:13px;color:#666;line-height:2;margin-top:16px">
+          <li><a href="/about" style="color:#0284c7">O nas</a></li>
+          <li><a href="/poradnik" style="color:#0284c7">Poradnik analizy statystyk</a></li>
+          <li><a href="/privacy" style="color:#0284c7">Polityka Prywatności</a></li>
+          <li><a href="/terms" style="color:#0284c7">Regulamin</a></li>
+        </ul>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

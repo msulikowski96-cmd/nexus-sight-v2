@@ -1,0 +1,58 @@
+{
+  "name": "@workspace/lol-overlay",
+  "version": "1.0.0",
+  "description": "Nexus Sight — nakładka na League of Legends",
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:3001 && electron .\"",
+    "dev:vite": "vite",
+    "build": "vite build && electron-builder",
+    "build:win": "vite build && electron-builder --win",
+    "build:dir": "vite build && electron-builder --dir",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.3.19",
+    "lucide-react": "^0.447.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "@types/node-fetch": "^2.6.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.0.1",
+    "electron": "^39.8.1",
+    "electron-builder": "^25.1.6",
+    "typescript": "^5.5.3",
+    "vite": "^6.4.2",
+    "wait-on": "^8.0.1",
+    "tailwindcss": "^3.4.10",
+    "autoprefixer": "^10.4.20"
+  },
+  "build": {
+    "appId": "pl.nexussight.overlay",
+    "productName": "Nexus Sight Overlay",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**",
+      "electron/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": ["Polish"],
+      "language": "1045"
+    }
+  }
+}

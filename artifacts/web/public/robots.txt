@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /ads.txt
+Disallow: /ads
+
+Sitemap: https://nexus-sight.onrender.com/sitemap.xml

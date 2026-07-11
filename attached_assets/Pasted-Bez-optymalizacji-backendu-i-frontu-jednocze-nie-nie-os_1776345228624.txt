@@ -1,0 +1,120 @@
+Bez optymalizacji backendu i frontu jednocześnie nie osiągniesz „2x szybciej”. U Ciebie największy hamulec to: cold start + ciężkie requesty (Riot + AI) + frontend bez agresywnego cache.
+
+Poniżej masz konkretne zmiany, które realnie robią różnicę.
+
+🔥 1. Backend – największy boost (Render)
+❌ Problem
+Każde wejście → pobierasz dane z Riot API
+odpalasz AI (Gemini)
+Render może być uśpiony
+
+👉 efekt: 3–10 sekund
+
+✅ Rozwiązanie: CACHE (must-have)
+Dodaj cache w Node (np. memory + TTL)
+
+Zainstaluj:
+
+npm install node-cache
+W api-server:
+import NodeCache from "node-cache";
+
+const cache = new NodeCache({ stdTTL: 300 }); // 5 minut
+Użycie:
+app.get("/api/profile/:name", async (req, res) => {
+  const key = req.params.name;
+
+  const cached = cache.get(key);
+  if (cached) {
+    return res.json(cached);
+  }
+
+  const data = await getDataFromRiotAndAI(key);
+
+  cache.set(key, data);
+  res.json(data);
+});
+
+👉 Efekt:
+
+pierwsze wejście: wolne
+kolejne: instant (0.1–0.3s)
+🔥 2. Rozdziel AI od głównego requestu
+❌ Teraz:
+
+czekasz aż AI skończy → blokujesz UI
+
+✅ Zrób:
+API zwraca dane Riot OD RAZU
+AI ładuje się osobno
+Backend:
+res.json({
+  profile: riotData,
+  ai: null
+});
+
+Drugi endpoint:
+
+/app.get("/api/ai/:name", ...)
+Frontend:
+// najpierw profil
+fetch("/api/profile/...")
+
+// potem AI
+fetch("/api/ai/...")
+
+👉 Efekt:
+
+user widzi dane w 1–2s
+AI dochodzi później
+⚡ 3. Frontend – lazy loading + split
+Jeśli masz Vite (a masz)
+Włącz code splitting:
+
+Zamiast:
+
+import Profile from "./Profile";
+
+Zrób:
+
+const Profile = React.lazy(() => import("./Profile"));
+
+I:
+
+<Suspense fallback={<Loader />}>
+  <Profile />
+</Suspense>
+
+👉 Efekt:
+
+mniejszy bundle
+szybszy start
+⚡ 4. Cache w przeglądarce (duży win)
+Dodaj w backendzie:
+res.set("Cache-Control", "public, max-age=60");
+
+👉 przeglądarka nie pyta API co sekundę
+
+⚡ 5. Preload danych (sprytne)
+
+Jak user wpisuje nick:
+👉 od razu odpal fetch (onChange), nie dopiero po enterze
+
+⚡ 6. Obrazki i assety
+
+Jeśli masz:
+
+ikonki champów
+itemy
+
+👉 użyj CDN:
+
+ddragon Riot CDN (już masz pewnie)
+albo cache lokalny
+⚡ 7. Zabij cold start (hack)
+
+Render free = usypia appkę
+
+👉 obejście:
+
+uptime robot (ping co 5 min)
